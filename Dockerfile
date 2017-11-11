@@ -1,9 +1,9 @@
 # Usage: docker run --restart=always -v /var/data/blockchain-xmr:/root/.bitmonero --network=host --name=monerod -td kannix/monero-full-node
-FROM alpine:latest
+FROM ubuntu:latest
 
 ENV MONERO_VERSION 0.11.1.0
 
-RUN apk update && apk add curl bzip2
+RUN apt-get update && apt-get install -y curl bzip2
 
 WORKDIR /root
 RUN curl https://downloads.getmonero.org/cli/monero-linux-x64-v${MONERO_VERSION}.tar.bz2 -O &&\
