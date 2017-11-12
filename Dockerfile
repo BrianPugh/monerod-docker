@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y curl bzip2
 
 WORKDIR /root
 RUN curl https://downloads.getmonero.org/cli/monero-linux-x64-v${MONERO_VERSION}.tar.bz2 -O &&\
-    echo '${MONERO_HASH}  monero-linux-x64-v${MONERO_VERSION}.tar.bz2' | sha256sum -c - &&\
+    echo ${MONERO_HASH} monero-linux-x64-v${MONERO_VERSION}.tar.bz2 | sha256sum --check &&\
     tar -xjvf monero-linux-x64-v${MONERO_VERSION}.tar.bz2 && \
     rm monero-linux-x64-v${MONERO_VERSION}.tar.bz2 && \
     cp ./monero-v${MONERO_VERSION}/monerod . && \
