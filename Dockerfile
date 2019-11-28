@@ -11,8 +11,8 @@ RUN curl https://downloads.getmonero.org/cli/monero-linux-x64-v${MONERO_VERSION}
     echo ${MONERO_HASH} monero-linux-x64-v${MONERO_VERSION}.tar.bz2 | sha256sum --check &&\
     tar -xjvf monero-linux-x64-v${MONERO_VERSION}.tar.bz2 && \
     rm monero-linux-x64-v${MONERO_VERSION}.tar.bz2 && \
-    cp ./monero-v${MONERO_VERSION}/monerod . && \
-    rm -r monero-*
+    mv ./monero-x86_64-linux-gnu-v${MONERO_VERSION}/* . && \
+    rmdir monero-x86_64-linux-gnu-v${MONERO_VERSION}
 
 # blockchain loaction
 VOLUME /root/.bitmonero
