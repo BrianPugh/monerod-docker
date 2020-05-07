@@ -1,8 +1,8 @@
 FROM ubuntu:latest
 
 # Confirm on your own that version/hash is correct
-ENV MONERO_VERSION 0.15.0.1
-ENV MONERO_HASH 8d61f992a7e2dbc3d753470b4928b5bb9134ea14cf6f2973ba11d1600c0ce9ad 
+ENV MONERO_VERSION 0.15.0.5
+ENV MONERO_HASH 6cae57cdfc89d85c612980c6a71a0483bbfc1b0f56bbb30e87e933e7ba6fc7e7 
 
 RUN apt-get update && apt-get install -y curl bzip2
 
